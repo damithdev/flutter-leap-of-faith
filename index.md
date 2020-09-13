@@ -13,38 +13,24 @@ Flutter is still new and young, but a trending technology with a huge potential,
 To start our journey with flutter we need several things to begin with,
 
 1. Windows, Mac or Linux PC
-2. Git [Download here] (https://git-scm.com/)
+2. Git [Download here](https://git-scm.com/)
 3. The flutter SDK installed [Follow this guide](https://flutter.dev/docs/get-started/install)
 4. Visual Studio Code Installed [Follow this](https://flutter.dev/docs/get-started/editor?tab=vscode)
-5. Android SDK Installed (Follow the flutter installation guide)
-6. Google Account (for firebase)
-7. Flutter Web Environment Setup (Optional - If you want try flutter web)
-8. Flutter Desktop Environment Setup (Optional - If you want try flutter desktop)
+5. Android SDK Installed _(Follow the above flutter installation guide)_
+6. Google Account _(for firebase)_
+7. Flutter Web Environment Setup _(Optional - If you want try flutter web)_
+8. Flutter Desktop Environment Setup _(Optional - If you want try flutter desktop)_
 
-```markdown
-Syntax highlighted code block
+### What you can expect ?
 
-# Header 1
-## Header 2
-### Header 3
+- Introduction to flutter
+- How to write lean code structure using flutter
+- A simple responsive app developement
+- Firebase integration with flutter
+- Writing asynchronus code in flutter
+- Writing callbacks in flutter
 
-- Bulleted
-- List
+### What we expect from you ?
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/damithdev/flutter-leap-of-faith/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- Familiarity with coding basics
+- Enthusiasm for technology
