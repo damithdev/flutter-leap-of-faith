@@ -18,8 +18,8 @@ To start our journey with flutter we need several things to begin with,
 4. Visual Studio Code Installed [Follow this](https://flutter.dev/docs/get-started/editor?tab=vscode)
 5. Android SDK Installed _(Follow the above flutter installation guide)_
 6. Google Account _(for firebase)_
-7. Flutter Web Environment Setup _(Optional - If you want try flutter web)_
-8. Flutter Desktop Environment Setup _(Optional - If you want try flutter desktop)_
+7. Flutter Web Environment Setup _(Optional - If you want try flutter web)_ [click here](https://flutter.dev/docs/get-started/web)
+8. Flutter Desktop Environment Setup _(Optional - If you want try flutter desktop)_ [click here](https://flutter.dev/desktop)
 
 ### What you can expect ?
 
