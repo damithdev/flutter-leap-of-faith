@@ -1,1 +1,5 @@
 @import "{{ site.theme }}";
+
+.page-header {
+  text-align: center;
+  background-image: linear-gradient(to bottom right, red, yellow);;
