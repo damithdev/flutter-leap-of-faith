@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_notes/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
 class NoteCard extends StatelessWidget {
   final double _card_height = 130;
@@ -13,6 +14,7 @@ class NoteCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final f = new DateFormat('yyyy-MM-dd hh:mm');
     final TextStyle cardText = Theme.of(context).textTheme.caption;
 
     return Scaffold(
@@ -38,7 +40,7 @@ class NoteCard extends StatelessWidget {
                 ),
                 Container(
                   alignment: Alignment.centerRight,
-                  child: Text("Last Updated : " + time.toString(),
+                  child: Text("Last Updated : " + f.format(time),
                   style: GoogleFonts.roboto(fontStyle: FontStyle.italic,color: Colors.grey),),
                 )
               ],
