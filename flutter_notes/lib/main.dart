@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_notes/note_card.dart';
+import 'package:flutter_notes/note_editor.dart';
 
 void main() {
   runApp(MyApp());
@@ -44,7 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
             }),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context,MaterialPageRoute(builder: (context)=>NoteEditor()));
+        },
         tooltip: 'Add Note',
         child: Icon(Icons.add),
       ),
