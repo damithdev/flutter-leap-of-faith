@@ -1,3 +1,7 @@
+## Events Reservation
+
+### NIBM Kandy [click here to reserve your seat](https://cutt.ly/nibm)
+
 ## What is flutter leap of faith
 
 Flutter leap of faith workshop is an introductory workshop to the flutter software development environment to drive the young minds to this latest cross platform technology to build mobile and web apps faster and conveniently.
