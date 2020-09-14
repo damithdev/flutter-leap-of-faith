@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_notes/note_card.dart';
 
 void main() {
   runApp(MyApp());
@@ -61,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
 
-        child: Container(),
+        child: NoteCard(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
