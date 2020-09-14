@@ -6,8 +6,9 @@ import 'package:flutter_notes/workers/requests.dart';
 
 class NoteEditor extends StatefulWidget {
   final String name;
+  final String note;
 
-  NoteEditor({this.name});
+  NoteEditor({this.name,this.note});
   @override
   _NoteEditorState createState() => _NoteEditorState();
 }
@@ -39,6 +40,12 @@ class _NoteEditorState extends State<NoteEditor> {
     } else {
       _showAlertDialog(false);
     }
+  }
+
+  @override
+  void initState() {
+    if(widget.note != null)editTextController.text = widget.note;
+    super.initState();
   }
 
   @override

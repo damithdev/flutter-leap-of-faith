@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
         print(item);
         Map noteItem = results[item];
         _list.add(new NoteModel(
-            name: noteItem['name'],
+            name: item,
             note: noteItem['note'],
             time: DateTime.parse(noteItem['time'])));
       }
@@ -35,6 +35,17 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         _noteList = _list.reversed.toList();
       });
+    }
+  }
+
+  _openCardEditor(String name, String note) async {
+    final result = await Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => NoteEditor(name: name, note: note)));
+
+    if (result) {
+      _updateNoteList();
     }
   }
 
@@ -56,17 +67,12 @@ class _MyHomePageState extends State<MyHomePage> {
             itemBuilder: (context, index) {
               var element = _noteList.elementAt(index);
               return NoteCard(
-                  note: element.note, name: element.name, time: element.time);
+                  note: element.note, name: element.name, time: element.time,callback: _openCardEditor,);
             }),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: ()  async {
-          final result = await Navigator.push(
-              context, MaterialPageRoute(builder: (context) => NoteEditor()));
-
-          if(result){
-            _updateNoteList();
-          }
+        onPressed: (){
+          _openCardEditor(null, null);
         },
         tooltip: 'Add Note',
         child: Icon(Icons.add),

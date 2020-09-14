@@ -9,11 +9,12 @@ class NoteCard extends StatelessWidget {
   final String name;
   final String note;
   final DateTime time;
+  final Function callback;
 
-  NoteCard({this.name, this.note, this.time});
+  NoteCard({this.name, this.note, this.time, this.callback});
 
-  _openCard(){
-
+  _openCard() {
+    callback(this.name,this.note);
   }
 
   @override
