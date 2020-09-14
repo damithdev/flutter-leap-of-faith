@@ -1,6 +1,6 @@
 ## Events Reservation
 
-### NIBM Kandy [click here to reserve your seat](https://cutt.ly/nibm)
+### NIBM Kandy (26th Sep 2020) [click here to reserve your seat](https://cutt.ly/nibm)
 
 ## What is flutter leap of faith
 
