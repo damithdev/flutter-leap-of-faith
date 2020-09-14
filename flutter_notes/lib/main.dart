@@ -36,8 +36,12 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: NoteCard(),
+      body: Container(
+        child: ListView.builder(
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return  NoteCard();
+            }),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},

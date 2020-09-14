@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 class NoteCard extends StatelessWidget {
-  final double _card_height = 130;
+  final double _card_height = 110;
 
   String note = StringConstatnts.sample_text;
   DateTime time = DateTime.now();
@@ -17,9 +17,8 @@ class NoteCard extends StatelessWidget {
     final f = new DateFormat('yyyy-MM-dd hh:mm');
     final TextStyle cardText = Theme.of(context).textTheme.caption;
 
-    return Scaffold(
-      body: Container(
-        padding: EdgeInsets.all(10),
+    return Container(
+        padding: EdgeInsets.only(left: 10,right: 10,top: 10,bottom: 0),
         height: _card_height,
         width: double.maxFinite,
         child: Card(
@@ -29,7 +28,7 @@ class NoteCard extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  height: _card_height - 70,
+                  height: _card_height - 55,
                   child: Text(
                     note,
                     maxLines: 3,
@@ -47,7 +46,6 @@ class NoteCard extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 }
