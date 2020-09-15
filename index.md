@@ -24,7 +24,7 @@ To start our journey with flutter we need several things to begin with,
 6. Google Account _(for firebase)_
 7. Flutter Web Environment Setup _(Optional - If you want try flutter web)_ [click here](https://flutter.dev/docs/get-started/web)
 8. Flutter Desktop Environment Setup _(Optional - If you want try flutter desktop)_ [click here](https://flutter.dev/desktop) (Mac & Linux)
-   note: Windows Desktop Developemnt is an early technical preview, therefore the follow this [guide](https://github.com/flutter/flutter/wiki/Desktop-shells#create) instead.
+note: Windows Desktop Developemnt is an early technical preview, therefore the follow this [guide](https://github.com/flutter/flutter/wiki/Desktop-shells#create) instead.
 
 ### What you can expect ?
 
@@ -34,6 +34,7 @@ To start our journey with flutter we need several things to begin with,
 - Firebase integration with flutter
 - Writing asynchronus code in flutter
 - Writing callbacks in flutter
+- Platform Specific Development
 
 ### What we expect from you ?
 
