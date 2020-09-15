@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_notes/models/note.dart';
 import 'package:flutter_notes/note_card.dart';
@@ -5,7 +8,8 @@ import 'package:flutter_notes/note_editor.dart';
 import 'package:flutter_notes/workers/requests.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  final bool isIOS;
+  MyHomePage({Key key, this.title, this.isIOS}) : super(key: key);
 
   final String title;
 
@@ -35,14 +39,28 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         _noteList = _list.reversed.toList();
       });
+    } else {
+      setState(() {
+        _noteList = List();
+      });
     }
   }
 
   _openCardEditor(String name, String note) async {
-    final result = await Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => NoteEditor(name: name, note: note)));
+    var _pageRoute = widget.isIOS
+        ? CupertinoPageRoute(
+            builder: (context) => NoteEditor(
+                  name: name,
+                  note: note,
+                  isIOS: widget.isIOS,
+                ))
+        : MaterialPageRoute(
+            builder: (context) => NoteEditor(
+                  name: name,
+                  note: note,
+                  isIOS: widget.isIOS,
+                ));
+    final result = await Navigator.push(context, _pageRoute);
 
     if (result) {
       _updateNoteList();
@@ -55,28 +73,54 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
   }
 
+  _getAppBody() {
+    return Container(
+      child: ListView.builder(
+          itemCount: _noteList.length,
+          itemBuilder: (context, index) {
+            var element = _noteList.elementAt(index);
+            return NoteCard(
+              note: element.note,
+              name: element.name,
+              time: element.time,
+              callback: _openCardEditor,
+            );
+          }),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Container(
-        child: ListView.builder(
-            itemCount: _noteList.length,
-            itemBuilder: (context, index) {
-              var element = _noteList.elementAt(index);
-              return NoteCard(
-                  note: element.note, name: element.name, time: element.time,callback: _openCardEditor,);
-            }),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          _openCardEditor(null, null);
-        },
-        tooltip: 'Add Note',
-        child: Icon(Icons.add),
-      ),
-    );
+    if (widget.isIOS) {
+      return CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(
+          middle: Text(widget.title),
+          trailing: GestureDetector(
+            onTap: () {
+              _openCardEditor(null, null);
+            },
+            child: Icon(
+              CupertinoIcons.add,
+              color: CupertinoColors.black,
+            ),
+          ),
+        ),
+        child: _getAppBody(),
+      );
+    } else {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: _getAppBody(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            _openCardEditor(null, null);
+          },
+          tooltip: 'Add Note',
+          child: Icon(Icons.add),
+        ),
+      );
+    }
   }
 }
