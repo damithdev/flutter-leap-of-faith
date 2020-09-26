@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 void main() {
   runApp(MyApp());
@@ -104,6 +105,13 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            Container(
+              child: Icon(
+                FlutterIcons.access_alarm_mdi,
+                color: Colors.red,
+                size: 50,
+              ),
+            )
           ],
         ),
       ),
